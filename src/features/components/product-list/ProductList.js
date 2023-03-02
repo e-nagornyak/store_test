@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { collection } from 'firebase/firestore'
 import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../../config/firebase'
+import { setCart } from '../cart-list/reducer/actions'
 import { ProductItem } from './Item/ProductItem'
 import s from './ProductList.module.css'
 import { getFilteredList, getProductList } from './reducer/thunks'
@@ -20,6 +21,10 @@ export const ProductList = () => {
 
   useEffect(() => {
     dispatch(getProductList(productsRef))
+    const carts = localStorage.getItem('carts')
+    if (carts) {
+      dispatch(setCart(JSON.parse(carts)))
+    }
   }, [dispatch])
 
   const onChangeSelect = e => {

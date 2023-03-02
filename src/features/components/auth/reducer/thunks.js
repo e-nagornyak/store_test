@@ -7,6 +7,7 @@ import {
 import { setAppStatus } from '../../../../app/reducer/actions'
 import { auth, googleProvider } from '../../../../config/firebase'
 import { errorUtils } from '../../../../utils/error-utils'
+import { setCart } from '../../cart-list/reducer/actions'
 import { setLogged } from './actions'
 
 export const signIn = (email, password) => async dispatch => {
@@ -46,6 +47,8 @@ export const logout = () => async dispatch => {
   dispatch(setAppStatus('loading'))
   try {
     await signOut(auth)
+    localStorage.removeItem('carts')
+    dispatch(setCart([]))
     dispatch(setLogged(false))
     dispatch(setAppStatus('succeeded'))
   } catch (e) {

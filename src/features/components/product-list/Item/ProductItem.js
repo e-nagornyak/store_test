@@ -2,6 +2,7 @@ import React, { memo, useState } from 'react'
 import { Button, Modal, Paper, Rating } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { addToLocalStorage } from '../../../../utils/utils-local-storage'
 import { addCart } from '../../cart-list/reducer/actions'
 import s from './ProductItem.module.css'
 
@@ -18,6 +19,7 @@ export const ProductItem = memo(({ item, isLogged }) => {
   const onClickHandler = () => {
     if (isLogged) {
       dispatch(addCart(item))
+      addToLocalStorage(item)
     } else {
       setOpen(true)
     }

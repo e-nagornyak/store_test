@@ -4,6 +4,9 @@ const initialState = {
 
 export const CartListReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'CART-LIST/SET-CART': {
+      return { ...state, cartList: action.payload.carts }
+    }
     case 'CART-LIST/ADD-CART':
       return {
         ...state,

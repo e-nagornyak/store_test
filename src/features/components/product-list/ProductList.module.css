@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     height: 80%;
+    margin-top: 85px;
 }
 
 .select_wrapper {

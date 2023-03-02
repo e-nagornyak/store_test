@@ -7,8 +7,7 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .circular-progress {
@@ -20,7 +19,7 @@ body {
 
 .container {
     width: 70%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

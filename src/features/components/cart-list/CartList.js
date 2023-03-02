@@ -2,7 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CustomButton } from '../../../common/components/CustomButton'
 import s from './CartList.module.css'
-import { changeCount, deleteCart } from './reducer/actions'
+import { changeCount } from './reducer/actions'
+import { removeCart } from './reducer/thunks'
 
 export const CartList = () => {
   const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export const CartList = () => {
       {cartItem.length ? (
         <ul className={s.product_wrapper}>
           {cartItem.map(c => {
-            const deleteItem = () => dispatch(deleteCart(c.id))
+            const deleteItem = () => dispatch(removeCart(c.id))
             const changeCountItem = e => dispatch(changeCount(c.id, e.currentTarget.value))
 
             return (

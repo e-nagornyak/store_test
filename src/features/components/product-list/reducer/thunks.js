@@ -17,12 +17,12 @@ export const getProductList = ref => async dispatch => {
 
 export const getFilteredList = (sort, ref) => async dispatch => {
   dispatch(setAppStatus('loading'))
-  let direction = 'asc'
+  let direction = 'desc'
   let sortDirection = 'price'
   if (sort === 'expensive') {
     direction = 'desc'
   } else if (sort === 'cheap') {
-    sortDirection = 'price'
+    direction = 'asc'
   } else {
     sortDirection = sort
   }
