@@ -1,22 +1,13 @@
 const initialState = {
-    userId: '',
-    name: '',
-    email: '',
-    photoUrl: ''
+  isLogged: false
 }
 
-export const profileReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "PROFILE/SET-USER":
-            return {
-                ...state,
-                userId: action.payload.displayName,
-                name: action.payload.name,
-                email: action.payload.email,
-                photoUrl: action.payload.photoUrl,
-            }
-        default:
-            return state
-    }
+export const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'AUTH/SET-LOGGED':
+      return { ...state, isLogged: action.payload.isLogged }
+    default:
+      return state
+  }
 }
 

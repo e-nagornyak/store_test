@@ -10,10 +10,10 @@ export const profileReducer = (state = initialState, action) => {
         case "PROFILE/SET-USER":
             return {
                 ...state,
-                userId: action.payload.displayName,
-                name: action.payload.name,
-                email: action.payload.email,
-                photoUrl: action.payload.photoUrl,
+                userId: action.payload.data.uid,
+                name: action.payload.data.displayName,
+                email: action.payload.data.email,
+                photoUrl: action.payload.data.photoURL,
             }
         default:
             return state

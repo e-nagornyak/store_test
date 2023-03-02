@@ -1,3 +1,40 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
 }
+
+.App {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.circular-progress {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 395px;
+    padding: 20px;
+    min-height: 240px;
+    background: white;
+    color: black;
+}
+

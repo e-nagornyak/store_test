@@ -1,2 +1,5 @@
-export const setLogged = (isLogged) => ({type: 'AUTH/SET-LOGGED', payload: {isLogged}})
+export const setProducts = products => ({
+  type: 'PRODUCT/SET-PRODUCT',
+  payload: { products }
+})
 

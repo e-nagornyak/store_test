@@ -1,13 +1,13 @@
 const initialState = {
-    isLogged: false
+  productList: []
 }
 
-export const authReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "AUTH/SET-LOGGED":
-            return {...state, isLogged: action.payload.isLogged}
-        default:
-            return state
-    }
+export const productListReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'PRODUCT/SET-PRODUCT':
+      return { ...state, productList: action.payload.products }
+    default:
+      return state
+  }
 }
 

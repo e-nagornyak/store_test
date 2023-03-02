@@ -1,14 +1,27 @@
 const initialState = {
-    productList: []
+  cartList: []
 }
 
-export const productListReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case "PRODUCT/SET-PRODUCT":
-            console.log(action.payload)
-            return {...state, productList: action.payload.products}
-        default:
-            return state
+export const CartListReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'CART-LIST/ADD-CART':
+      return {
+        ...state,
+        cartList: [...state.cartList, { ...action.payload.item, count: 1 }]
+      }
+    case 'CART-LIST/DELETE-CART':
+      return {
+        ...state,
+        cartList: state.cartList.filter(el => el.id !== action.payload.id)
+      }
+    case 'CART-LIST/CHANGE-COUNT': {
+      const { id, count } = action.payload
+      return {
+        ...state,
+        cartList: state.cartList.map(el => (el.id === id ? { ...el, count } : el))
+      }
     }
+    default:
+      return state
+  }
 }
-

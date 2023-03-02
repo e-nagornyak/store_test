@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.btn_wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.cart {
+    border: 2px solid #afafaf;
+    border-radius: 4px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.cart:hover {
+    border: none;
+}
+
+.count {
+    position: relative;
+    bottom: -20px;
+    left: -29px;
+    background: red;
+    width: 19px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 10px;
+}
